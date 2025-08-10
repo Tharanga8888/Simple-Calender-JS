@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.calendar {
+  max-width: 400px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  outline: none;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.calendar-header button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-header button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.calendar-header button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.calendar-days,
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.calendar-days div {
+  font-weight: bold;
+  color: #444;
+  user-select: none;
+}
+
+.calendar-dates div {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  outline-offset: 2px;
+}
+
+.calendar-dates div.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+.calendar-dates div.today {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+.calendar-dates div.selected {
+  background-color: #0056b3;
+  color: white;
+  font-weight: bold;
+}
+
+.calendar-dates div:focus {
+  outline: 2px solid #0056b3;
+  background-color: #cce5ff;
+}
+
+.selected-date {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Fade-in animation for month change */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+  .calendar {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .calendar-header h2 {
+    font-size: 1.25em;
+  }
+  .calendar-header button {
+    font-size: 1em;
+    padding: 5px 8px;
+  }
+  .calendar-dates div, .calendar-days div {
+    padding: 8px 4px;
+    font-size: 0.85em;
+  }
+}

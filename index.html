@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calendar UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="calendar" tabindex="0" aria-label="Calendar">
+    <div class="calendar-header">
+      <button id="prevBtn" aria-label="Previous month">&#8592;</button>
+      <h2 id="monthYear">Month Year</h2>
+      <button id="nextBtn" aria-label="Next month">&#8594;</button>
+    </div>
+    <div class="calendar-days" role="row">
+      <div role="columnheader">Sun</div><div role="columnheader">Mon</div><div role="columnheader">Tue</div><div role="columnheader">Wed</div>
+      <div role="columnheader">Thu</div><div role="columnheader">Fri</div><div role="columnheader">Sat</div>
+    </div>
+    <div id="calendarDates" class="calendar-dates" role="grid" aria-live="polite">
+      <!-- Dates will be generated here -->
+    </div>
+    <p id="selectedDateDisplay" aria-live="polite" class="selected-date"></p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
